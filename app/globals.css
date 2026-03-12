@@ -1,0 +1,303 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens for glassmorphism design with blush pink, champagne gold, and frosted glass effects */
+  --background: oklch(0.96 0.005 85); /* Light Frost #F5F5F5 */
+  --foreground: oklch(0.35 0.01 250); /* Dark Gray #4B5563 */
+  --card: oklch(1 0 0 / 0.8); /* Glass effect - white with transparency */
+  --card-foreground: oklch(0.35 0.01 250); /* Dark Gray text on cards */
+  --popover: oklch(1 0 0 / 0.9); /* Slightly more opaque for popovers */
+  --popover-foreground: oklch(0.35 0.01 250); /* Dark Gray text on popovers */
+  --primary: oklch(0.91 0.04 15); /* Blush Pink #FAD8D4 */
+  --primary-foreground: oklch(0.35 0.01 250); /* Dark Gray text on primary */
+  --secondary: oklch(0.82 0.03 65); /* Champagne Gold #D9CBAE */
+  --secondary-foreground: oklch(0.35 0.01 250); /* Dark Gray text on secondary */
+  --muted: oklch(1 0 0 / 0.6); /* Muted background with transparency */
+  --muted-foreground: oklch(0.35 0.01 250); /* Dark Gray muted text */
+  --accent: oklch(0.82 0.03 65); /* Champagne Gold for accents */
+  --accent-foreground: oklch(0.35 0.01 250); /* Dark Gray text for accents */
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 0.2); /* Light border with transparency */
+  --input: oklch(1 0 0 / 0.8); /* Input background with transparency */
+  --ring: oklch(0.82 0.03 65 / 0.5); /* Subtle champagne gold focus ring */
+  --chart-1: oklch(0.91 0.04 15); /* Blush Pink */
+  --chart-2: oklch(0.82 0.03 65); /* Champagne Gold */
+  --chart-3: oklch(0.96 0.005 85); /* Light Frost */
+  --chart-4: oklch(0.577 0.245 27.325); /* Accent color */
+  --chart-5: oklch(0.35 0.01 250); /* Dark Gray */
+  --radius: 0.5rem; /* Softer rounded corners for glass effect */
+  --sidebar: oklch(1 0 0 / 0.9); /* Sidebar with glass effect */
+  --sidebar-foreground: oklch(0.35 0.01 250); /* Dark Gray sidebar text */
+  --sidebar-primary: oklch(0.91 0.04 15); /* Blush Pink sidebar primary */
+  --sidebar-primary-foreground: oklch(0.35 0.01 250); /* Dark Gray text */
+  --sidebar-accent: oklch(0.82 0.03 65); /* Champagne Gold sidebar accent */
+  --sidebar-accent-foreground: oklch(0.35 0.01 250); /* Dark Gray text */
+  --sidebar-border: oklch(1 0 0 / 0.2); /* Transparent sidebar border */
+  --sidebar-ring: oklch(0.82 0.03 65 / 0.5); /* Champagne gold focus ring */
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Updated font configuration to use the proper font variables from layout.tsx */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Enhanced glassmorphism utility classes with animations */
+  .glass {
+    @apply backdrop-blur-md bg-card border border-border;
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-lg bg-card/90 border border-border shadow-lg;
+  }
+
+  .glass-subtle {
+    @apply backdrop-blur-sm bg-card/60 border border-border/50;
+  }
+
+  /* Enhanced premium animation classes with new effects */
+  .floating-crystal {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-heart {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .glass-glow {
+    box-shadow: 0 0 20px rgba(250, 216, 212, 0.3);
+  }
+
+  .crystal-text {
+    text-shadow: 0 0 10px rgba(250, 216, 212, 0.2);
+  }
+
+  .glass-button {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(250, 216, 212, 0.2);
+  }
+
+  .glass-button:hover {
+    box-shadow: 0 8px 25px rgba(250, 216, 212, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .testimonial-glow {
+    border: 1px solid rgba(217, 203, 174, 0.3);
+  }
+
+  .testimonial-glow:hover {
+    border: 1px solid rgba(217, 203, 174, 0.6);
+    box-shadow: 0 0 20px rgba(217, 203, 174, 0.2);
+  }
+
+  /* Added shimmer effect for merchandise cards */
+  .shimmer-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(250, 216, 212, 0.2), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  /* Enhanced floating animations with staggered timing */
+  .float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  /* Added glass morphism hover effects for cards */
+  .glass-hover-lift {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(250, 216, 212, 0.3);
+  }
+
+  /* Enhanced glow effects for interactive elements */
+  .champagne-glow {
+    box-shadow: 0 0 15px rgba(217, 203, 174, 0.4);
+  }
+
+  .champagne-glow:hover {
+    box-shadow: 0 0 30px rgba(217, 203, 174, 0.6);
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Added shimmer animation keyframes */
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Added gentle rotation animation for logos */
+  @keyframes gentle-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(1deg);
+    }
+    75% {
+      transform: rotate(-1deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .gentle-rotate {
+    animation: gentle-rotate 4s ease-in-out infinite;
+  }
+
+  /* Enhanced form styling */
+  input,
+  textarea {
+    transition: all 0.3s ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    box-shadow: 0 0 0 2px rgba(217, 203, 174, 0.3);
+  }
+
+  /* Added enhanced glass morphism effects for better visual depth */
+  .glass-ultra {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(250, 216, 212, 0.2);
+  }
+
+  .glass-frosted {
+    backdrop-filter: blur(10px) brightness(1.1);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(217, 203, 174, 0.2);
+  }
+}
