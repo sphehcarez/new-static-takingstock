@@ -112,10 +112,8 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-
-  /* Updated font configuration to use the proper font variables from layout.tsx */
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-sans: "Aptos", "Segoe UI", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
