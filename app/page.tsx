@@ -382,17 +382,19 @@ export default function HomePage() {
             <CardContent>
               <div className="text-center mb-6">
                 <Image
-                  src="/images/girlies-logo.png"
-                  alt="Taking Stock event"
+                  src="/images/taking-stock-logo.png"
+                  alt="Taking Stock Kids event"
                   width={150}
-                  height={75}
-                  className="mx-auto floating-crystal mb-4"
+                  height={150}
+                  className="mx-auto floating-crystal mb-4 rounded-full"
                 />
                 <div className="inline-flex items-center rounded-full bg-red-100 px-4 py-2 text-sm font-semibold text-red-700 mb-4">
                   Sold Out
                 </div>
-                <h3 className="font-serif text-3xl font-bold text-foreground mb-2">Built Different: Boys Edition</h3>
-                <p className="text-secondary font-medium text-lg mb-4">A focused camp experience for boys.</p>
+                <h3 className="font-serif text-3xl font-bold text-foreground mb-2">Built Different: Kids Event</h3>
+                <p className="text-secondary font-medium text-lg mb-4">
+                  A Taking Stock Kids camp experience happening this weekend.
+                </p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -422,7 +424,8 @@ export default function HomePage() {
                 <div className="glass rounded-2xl p-6 text-left">
                   <h4 className="font-serif text-2xl font-bold text-foreground mb-4">Enquiries</h4>
                   <p className="text-muted-foreground mb-3">
-                    This event is fully booked. To join the waiting list or enquire about future events:
+                    This kids event is fully booked. To join the waiting list or enquire about future Taking Stock
+                    events:
                   </p>
                   <p className="font-semibold text-foreground">RSVP: 083 362 7409</p>
                 </div>

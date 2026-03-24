@@ -15,6 +15,26 @@ export default function EventsPage() {
 
   const pastEvents = [
     {
+      year: "2026",
+      title: "Built Different: Kids Event",
+      theme: "A Taking Stock Kids camp experience for growth, connection, and character-building.",
+      description: "A separate kids event under Taking Stock Kids, distinct from Girlies on the Mend.",
+      icon: Users,
+      colorClass: "bg-secondary",
+      textColorClass: "text-secondary",
+      bgColorClass: "bg-secondary/20",
+    },
+    {
+      year: "2025",
+      title: "Girlies on the Mend",
+      theme: "A healing space for women finding their way back to wholeness.",
+      description: "A dedicated women's event centred on healing, reflection, sisterhood, and restoration.",
+      icon: Heart,
+      colorClass: "bg-primary",
+      textColorClass: "text-primary",
+      bgColorClass: "bg-primary/20",
+    },
+    {
       year: "2024",
       title: "Mending: Wounded But Not Broken",
       theme: "Yes, you've been wounded - but you are not broken.",
@@ -118,19 +138,21 @@ export default function EventsPage() {
                       </div>
                       <div className="mb-6">
                         <Image
-                          src="/images/girlies-logo.png"
-                          alt="Taking Stock event"
+                          src="/images/taking-stock-logo.png"
+                          alt="Taking Stock Kids event"
                           width={150}
-                          height={75}
-                          className="floating-crystal"
+                          height={150}
+                          className="floating-crystal rounded-full"
                         />
                       </div>
-                      <h3 className="font-serif text-3xl font-bold text-foreground mb-3">Built Different: Boys Edition</h3>
-                      <p className="text-secondary font-medium text-lg mb-4">A focused camp experience for boys.</p>
+                      <h3 className="font-serif text-3xl font-bold text-foreground mb-3">Built Different: Kids Event</h3>
+                      <p className="text-secondary font-medium text-lg mb-4">
+                        A Taking Stock Kids camp experience happening this weekend.
+                      </p>
                       <p className="text-muted-foreground mb-6 leading-relaxed">
-                        A focused boys camp designed to create space for growth, connection, and memorable shared
-                        experiences. This intake is already fully booked, and we are now taking enquiries for future
-                        events.
+                        A focused kids event designed to create space for growth, connection, and memorable shared
+                        experiences. Girlies on the Mend remains a separate women's event from last year, while this is
+                        the current Taking Stock Kids experience.
                       </p>
 
                       <div className="space-y-3 mb-8">
@@ -182,7 +204,7 @@ export default function EventsPage() {
                 const isEven = index % 2 === 0
 
                 return (
-                  <div key={event.year} className="relative flex items-start md:justify-center">
+                  <div key={`${event.year}-${event.title}`} className="relative flex items-start md:justify-center">
                     <div
                       className={`absolute left-8 md:left-1/2 top-6 w-3 h-3 ${event.colorClass} rounded-full transform -translate-x-1.5 md:-translate-x-1.5 z-10 pulse-glow`}
                     ></div>
