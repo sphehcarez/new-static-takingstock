@@ -16,9 +16,9 @@ export default function EventsPage() {
   const pastEvents = [
     {
       year: "2026",
-      title: "Built Different: Kids Event",
-      theme: "A Taking Stock Kids camp experience for growth, connection, and character-building.",
-      description: "A separate kids event under Taking Stock Kids, distinct from Girlies on the Mend.",
+      title: "Built Different: Boys Edition",
+      theme: "A focused camp experience for boys.",
+      description: "A focused boys camp designed to create space for growth, connection, and memorable shared experiences.",
       icon: Users,
       colorClass: "bg-secondary",
       textColorClass: "text-secondary",
@@ -139,20 +139,17 @@ export default function EventsPage() {
                       <div className="mb-6">
                         <Image
                           src="/images/taking-stock-logo.png"
-                          alt="Taking Stock Kids event"
+                          alt="Taking Stock event"
                           width={150}
                           height={150}
                           className="floating-crystal rounded-full"
                         />
                       </div>
-                      <h3 className="font-serif text-3xl font-bold text-foreground mb-3">Built Different: Kids Event</h3>
-                      <p className="text-secondary font-medium text-lg mb-4">
-                        A Taking Stock Kids camp experience happening this weekend.
-                      </p>
+                      <h3 className="font-serif text-3xl font-bold text-foreground mb-3">Built Different: Boys Edition</h3>
+                      <p className="text-secondary font-medium text-lg mb-4">A focused camp experience for boys.</p>
                       <p className="text-muted-foreground mb-6 leading-relaxed">
-                        A focused kids event designed to create space for growth, connection, and memorable shared
-                        experiences. Girlies on the Mend remains a separate women's event from last year, while this is
-                        the current Taking Stock Kids experience.
+                        A focused boys camp designed to create space for growth, connection, and memorable shared
+                        experiences.
                       </p>
 
                       <div className="space-y-3 mb-8">
