@@ -2,15 +2,101 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Calendar, MapPin, Users, Heart, Sparkles, ArrowRight, Star } from "lucide-react"
+import {
+  ArrowRight,
+  BookOpen,
+  Brain,
+  Calendar,
+  Heart,
+  Lightbulb,
+  MapPin,
+  Shield,
+  Sparkles,
+  Star,
+  Stars,
+  Users,
+} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
-import { PaymentPopup } from "@/components/payment-popup"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
 export default function HomePage() {
-  const [showPaymentPopup, setShowPaymentPopup] = useState(false)
+  const kidsVision = [
+    "Understand themselves",
+    "Make wise choices",
+    "Lead with character",
+    "Shine confidently in who they are",
+  ]
+
+  const kidsLearning = [
+    "Build strong character",
+    "Develop confidence and self-worth",
+    "Think before they act",
+    "Practice kindness and respect",
+    "Dream and believe in themselves",
+  ]
+
+  const kidsApproach = [
+    "Storytelling",
+    "Creative activities",
+    "Life skills development",
+    "Reflection and conversation",
+    "Fun and interactive learning",
+  ]
+
+  const stockvillePlaces = [
+    "The Character Construction Zone - where children learn to build strong values",
+    "The Star Garden - where they learn self-care, confidence, and identity",
+    "The Reflection Tree - where they pause and take stock of their choices",
+    "The Choice Bridge - where they learn to choose between right and wrong",
+    "The Taking Stock School - where all lessons come together",
+  ]
+
+  const stockvilleCharacters = [
+    {
+      name: "Stocky the Builder",
+      title: "The Character Guide",
+      quote: "Every good choice builds your character.",
+      traits: ["respect", "responsibility", "courage", "honesty", "integrity"],
+    },
+    {
+      name: "Stella the Star",
+      title: "The Confidence & Self-Care Guide",
+      quote: "Shine bright by taking care of yourself.",
+      traits: ["hygiene", "self-control", "confidence", "identity", "kindness"],
+    },
+    {
+      name: "Theo the Thinker",
+      title: "The Decision-Making Guide",
+      quote: "Let's think about that first!",
+      traits: ["thinking before acting", "problem-solving", "wise decisions"],
+    },
+    {
+      name: "Kiki the Creator",
+      title: "The Creativity & Expression Guide",
+      quote: "Every idea can become something amazing!",
+      traits: ["self-expression", "talent exploration", "confidence in uniqueness"],
+    },
+    {
+      name: "Coach Tumi",
+      title: "The Emotional Control Guide",
+      quote: "Slow down. Breathe. Choose wisely.",
+      traits: ["patience", "calmness", "managing big emotions"],
+    },
+    {
+      name: "Granny Wisdom",
+      title: "The Reflection Guide",
+      quote: "Every day is a chance to grow.",
+      traits: ["self-awareness", "learning from mistakes", "gratitude", "growth"],
+    },
+    {
+      name: "Scout Sky",
+      title: "The Dream & Vision Guide",
+      quote: "Your dreams can take you anywhere!",
+      traits: ["dreaming big", "bravery", "believing in the future"],
+    },
+  ]
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -46,14 +132,12 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg glass-button"
-                onClick={() => setShowPaymentPopup(true)}
-              >
-                Reserve Your Space
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link href="/events">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg glass-button">
+                  View Current Event
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
               <Link href="/story">
                 <Button
                   variant="outline"
@@ -117,13 +201,180 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Taking Stock Kids Section */}
+      <section id="taking-stock-kids" className="py-16 px-6">
+        <div className="max-w-7xl mx-auto space-y-10">
+          <div className="text-center max-w-5xl mx-auto">
+            <div className="inline-flex items-center gap-2 rounded-full glass-subtle px-4 py-2 mb-6">
+              <Stars className="h-4 w-4 text-secondary" />
+              <span className="text-sm font-medium text-foreground">New Program Spotlight</span>
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">Taking Stock Kids</h2>
+            <p className="text-2xl md:text-3xl font-serif text-secondary mb-4">Building Character. Shining Bright.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Welcome to Taking Stock Kids, a fun, powerful, and intentional program designed to help children grow in
+              character, confidence, and self-awareness from a young age. At Taking Stock, we believe children should
+              understand their choices, emotions, and identity early in life.
+            </p>
+          </div>
+
+          <div className="grid xl:grid-cols-[1.15fr_0.85fr] gap-8">
+            <Card className="glass-strong p-8 md:p-10">
+              <CardContent className="p-0 space-y-8">
+                <div>
+                  <h3 className="font-serif text-3xl font-bold text-foreground mb-4">Our Vision</h3>
+                  <p className="text-muted-foreground mb-5">To raise a generation of children who:</p>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {kidsVision.map((item) => (
+                      <div key={item} className="glass rounded-2xl px-4 py-4 flex items-center gap-3">
+                        <Sparkles className="h-5 w-5 text-secondary shrink-0" />
+                        <span className="text-foreground font-medium">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="glass rounded-3xl p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Shield className="h-6 w-6 text-primary" />
+                      <h4 className="font-serif text-2xl font-bold text-foreground">What Children Learn</h4>
+                    </div>
+                    <div className="space-y-3">
+                      {kidsLearning.map((item) => (
+                        <div key={item} className="flex items-start gap-3">
+                          <Star className="h-4 w-4 text-secondary mt-1 shrink-0" />
+                          <p className="text-muted-foreground leading-relaxed">{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="glass rounded-3xl p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <BookOpen className="h-6 w-6 text-primary" />
+                      <h4 className="font-serif text-2xl font-bold text-foreground">Our Approach</h4>
+                    </div>
+                    <div className="space-y-3">
+                      {kidsApproach.map((item) => (
+                        <div key={item} className="flex items-start gap-3">
+                          <Heart className="h-4 w-4 text-secondary mt-1 shrink-0" />
+                          <p className="text-muted-foreground leading-relaxed">{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-5 leading-relaxed">
+                      All designed to create a safe, engaging, and empowering environment for children.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glass p-8 md:p-10 overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-primary/10" />
+              <CardContent className="p-0 relative">
+                <h3 className="font-serif text-3xl font-bold text-foreground mb-3">Welcome to Stockville</h3>
+                <p className="text-secondary font-medium text-lg mb-4">
+                  The world where kids learn to make bright choices
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Taking Stock Kids comes to life through Stockville, a magical village where children learn life
+                  lessons in ways they can understand, enjoy, and apply.
+                </p>
+
+                <div className="space-y-3 mb-6">
+                  {stockvillePlaces.map((place) => (
+                    <div key={place} className="glass-subtle rounded-2xl px-4 py-4">
+                      <p className="text-foreground leading-relaxed">{place}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="rounded-3xl bg-secondary/15 border border-secondary/30 px-5 py-5">
+                  <p className="text-foreground font-medium">Stockville is a journey of becoming.</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="glass-strong p-8 md:p-10">
+            <CardContent className="p-0">
+              <div className="text-center mb-8 max-w-3xl mx-auto">
+                <h3 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-3">
+                  Meet the Stockville Characters
+                </h3>
+                <p className="text-lg text-muted-foreground">
+                  Your child's guides in growth, each bringing a different lesson in character, confidence, reflection,
+                  and wise decision-making.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {stockvilleCharacters.map((character, index) => {
+                  const icons = [Shield, Sparkles, Brain, Lightbulb, Heart, BookOpen, Stars]
+                  const Icon = icons[index]
+
+                  return (
+                    <Card key={character.name} className="glass h-full border border-border/70">
+                      <CardContent className="p-6 h-full">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-12 h-12 rounded-full bg-primary/25 flex items-center justify-center">
+                            <Icon className="h-5 w-5 text-primary" />
+                          </div>
+                          <div>
+                            <h4 className="font-serif text-2xl font-bold text-foreground">{character.name}</h4>
+                            <p className="text-sm text-secondary font-medium">{character.title}</p>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2 mb-5">
+                          {character.traits.map((trait) => (
+                            <div key={trait} className="flex items-start gap-2">
+                              <Sparkles className="h-4 w-4 text-secondary mt-1 shrink-0" />
+                              <p className="text-muted-foreground">{trait}</p>
+                            </div>
+                          ))}
+                        </div>
+
+                        <p className="italic text-foreground/80">"{character.quote}"</p>
+                      </CardContent>
+                    </Card>
+                  )
+                })}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="glass p-8 md:p-10 border-2 border-secondary/30">
+            <CardContent className="p-0 text-center">
+              <p className="text-sm uppercase tracking-[0.25em] text-secondary font-semibold mb-4">
+                Taking Stock Kids Promise
+              </p>
+              <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                <div className="rounded-2xl bg-primary/20 px-5 py-5">
+                  <p className="font-serif text-2xl font-bold text-foreground">We build strong character.</p>
+                </div>
+                <div className="rounded-2xl bg-secondary/20 px-5 py-5">
+                  <p className="font-serif text-2xl font-bold text-foreground">We make wise choices.</p>
+                </div>
+                <div className="rounded-2xl bg-primary/20 px-5 py-5">
+                  <p className="font-serif text-2xl font-bold text-foreground">We shine bright.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Upcoming Event Highlight Section */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">Join Us</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">Current Event</h2>
             <p className="text-lg text-muted-foreground">
-              Our next healing retreat is approaching. Reserve your sacred space.
+              Our current event is now fully booked. View the details below and contact us to enquire about future
+              events.
             </p>
           </div>
 
@@ -132,39 +383,55 @@ export default function HomePage() {
               <div className="text-center mb-6">
                 <Image
                   src="/images/girlies-logo.png"
-                  alt="Girlies on the Mend"
+                  alt="Taking Stock event"
                   width={150}
                   height={75}
                   className="mx-auto floating-crystal mb-4"
                 />
-                <h3 className="font-serif text-3xl font-bold text-foreground mb-2">On The Mend</h3>
-                <p className="text-secondary font-medium text-lg mb-4">"Honouring the journey of healing."</p>
+                <div className="inline-flex items-center rounded-full bg-red-100 px-4 py-2 text-sm font-semibold text-red-700 mb-4">
+                  Sold Out
+                </div>
+                <h3 className="font-serif text-3xl font-bold text-foreground mb-2">Built Different: Boys Edition</h3>
+                <p className="text-secondary font-medium text-lg mb-4">A focused camp experience for boys.</p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="text-center">
                   <Calendar className="h-8 w-8 text-secondary mx-auto mb-2" />
-                  <p className="font-medium text-foreground">31 Oct - 2 Nov 2025</p>
+                  <p className="font-medium text-foreground">29 March - 1 April 2026</p>
                 </div>
                 <div className="text-center">
                   <MapPin className="h-8 w-8 text-secondary mx-auto mb-2" />
-                  <p className="font-medium text-foreground">Midlands, SA</p>
+                  <p className="font-medium text-foreground">Thornville</p>
                 </div>
                 <div className="text-center">
                   <Users className="h-8 w-8 text-secondary mx-auto mb-2" />
-                  <p className="font-medium text-foreground">R3,000 • R1,000 deposit</p>
+                  <p className="font-medium text-foreground">R400 per person</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="glass rounded-2xl p-6 text-left">
+                  <h4 className="font-serif text-2xl font-bold text-foreground mb-4">Includes</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>Accommodation</li>
+                    <li>Meals</li>
+                    <li>Activities</li>
+                  </ul>
+                </div>
+                <div className="glass rounded-2xl p-6 text-left">
+                  <h4 className="font-serif text-2xl font-bold text-foreground mb-4">Enquiries</h4>
+                  <p className="text-muted-foreground mb-3">
+                    This event is fully booked. To join the waiting list or enquire about future events:
+                  </p>
+                  <p className="font-semibold text-foreground">RSVP: 083 362 7409</p>
                 </div>
               </div>
 
               <div className="text-center">
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-4 text-lg glass-button"
-                  onClick={() => setShowPaymentPopup(true)}
-                >
-                  Reserve Your Space
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <p className="text-lg font-medium text-foreground">
+                  We are grateful for the response. This event is currently sold out.
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -325,8 +592,8 @@ export default function HomePage() {
             <CardContent>
               <h2 className="font-serif text-4xl font-bold text-foreground mb-6">Ready to Begin Your Journey?</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Join our community of women committed to healing, growth, and transformation. Discover upcoming events
-                and take the first step toward your renewal.
+                Explore our current event details, see what is coming next, and contact us to enquire about future
+                Taking Stock experiences.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/events">
@@ -396,8 +663,9 @@ export default function HomePage() {
         </div>
       </footer>
 
-      {/* Payment Popup */}
-      <PaymentPopup isOpen={showPaymentPopup} onClose={() => setShowPaymentPopup(false)} />
     </div>
   )
 }
+
+
+

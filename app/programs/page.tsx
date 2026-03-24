@@ -65,7 +65,7 @@ export default function ProgramsPage() {
     {
       title: "Replenish",
       description:
-        "You cannot pour from an empty cup. Replenish is a wellness-cantered program designed to restore your energy, refresh your spirit, and renew your commitment to self-care through rest, creativity, and healing rhythms.",
+        "You cannot pour from an empty cup. Replenish is a wellness-centered program designed to restore your energy, refresh your spirit, and renew your commitment to self-care through rest, creativity, and healing rhythms.",
       icon: Droplets,
     },
     {
@@ -85,6 +85,18 @@ export default function ProgramsPage() {
       description:
         "A gentle continuation of the healing journey. This program honours the process, celebrates progress, and supports you as you rebuild one step at a time. It's not about perfection. It's about presence.",
       icon: Stethoscope,
+    },
+    {
+      title: "Taking Stock Kids",
+      description:
+        "A character-building program for children that uses storytelling, reflection, and creative activities to help them understand identity, choices, confidence, and self-awareness from a young age.",
+      icon: Eye,
+    },
+    {
+      title: "Built Different",
+      description:
+        "A focused camp experience designed for boys, creating space for growth, connection, and life-giving activities in an intentional environment that builds confidence and character.",
+      icon: Heart,
     },
   ]
 
@@ -136,7 +148,7 @@ export default function ProgramsPage() {
                 </p>
                 <p>
                   Whether you're just starting your healing journey, rediscovering your identity, or learning to love
-                  yourself again, there's space here for you.
+                  yourself again, there's space here for you. We are also expanding that work through intentional experiences for children and boys.
                 </p>
                 <div className="mt-8 p-6 glass-subtle rounded-lg">
                   <p className="text-lg font-medium text-foreground mb-2">A safe space.</p>
@@ -201,3 +213,5 @@ export default function ProgramsPage() {
     </div>
   )
 }
+
+
