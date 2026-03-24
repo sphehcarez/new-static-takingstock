@@ -2,6 +2,8 @@
 
 Marketing website for Taking Stock, built with Next.js and exported as a static site for Azure Static Web Apps.
 
+This README was lightly updated to trigger CI validation.
+
 ## Stack
 
 - Next.js 15
