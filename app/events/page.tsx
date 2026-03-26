@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Calendar, MapPin, Users, Heart, Sparkles, ArrowLeft, ArrowRight } from "lucide-react"
+import { Calendar, MapPin, Users, Heart, Sparkles, ArrowLeft, ArrowRight, Clock3 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
@@ -185,12 +185,23 @@ export default function EventsPage() {
                         </div>
                       </div>
 
-                      <Link href="/#contact">
-                        <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground glass-button text-lg py-3">
-                          Contact Taking Stock
-                          <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
-                      </Link>
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        <Link href="/events/agenda">
+                          <Button
+                            variant="outline"
+                            className="w-full border-primary/30 bg-background/70 text-foreground hover:bg-background/90 text-lg py-3"
+                          >
+                            View Agenda
+                            <Clock3 className="ml-2 h-5 w-5" />
+                          </Button>
+                        </Link>
+                        <Link href="/#contact">
+                          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground glass-button text-lg py-3">
+                            Contact Taking Stock
+                            <ArrowRight className="ml-2 h-5 w-5" />
+                          </Button>
+                        </Link>
+                      </div>
                     </CardContent>
                   </Card>
                 </div>

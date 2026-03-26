@@ -429,9 +429,16 @@ export default function HomePage() {
               </div>
 
               <div className="text-center">
-                <p className="text-lg font-medium text-foreground">
-                  We are grateful for the response. This event is currently sold out.
-                </p>
+                <div className="flex flex-col items-center gap-4">
+                  <p className="text-lg font-medium text-foreground">
+                    We are grateful for the response. This event is currently sold out.
+                  </p>
+                  <Link href="/events/agenda">
+                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground glass-button">
+                      View Retreat Agenda
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </CardContent>
           </Card>
